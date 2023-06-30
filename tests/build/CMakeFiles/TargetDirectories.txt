@@ -1,0 +1,3 @@
+/home/javad/Desktop/SERRANO/serrano/serrano/serrano/tests/build/CMakeFiles/edit_cache.dir
+/home/javad/Desktop/SERRANO/serrano/serrano/serrano/tests/build/CMakeFiles/rebuild_cache.dir
+/home/javad/Desktop/SERRANO/serrano/serrano/serrano/tests/build/CMakeFiles/runTest.dir

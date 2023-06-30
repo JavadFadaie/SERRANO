@@ -1,0 +1,182 @@
+ qsub -I -l select=1:node_type=hsw128gb24c:ncpus=24:mpiprocs=24 -l walltime=00:60:00
+ 
+ssh hpcjfada@hawk.hww.hlrs.de -X 
+ssh hpcjfada@hawk.hww.hlrs.de
+ssh hpcjfada@vulcan.hww.hlrs.de 
+qsub -I -l select=1:node_type=rome:ncpus=128:mpiprocs=128 -l walltime=00:60:00 
+qsub -I -l select=1:node_type=rome:ncpus=128:mpiprocs=128 -l walltime=00:360:00
+qsub -I -l select=1:node_type=rome:ncpus=128:mpiprocs=128 -l walltime=03:00:00 
+qsub -I -l select=2:node_type=rome:ncpus=128:mpiprocs=128 -l walltime=00:120:00 
+qsub -I -l select=3:node_type=rome:ncpus=128:mpiprocs=128 -l walltime=00:60:00 
+qsub -I -l select=4:node_type=rome:ncpus=128:mpiprocs=128 -l walltime=00:60:00 
+qsub -I -l select=8:node_type=rome:ncpus=128:mpiprocs=128 -l walltime=00:120:00 
+qsub -I -l select=16:node_type=rome:ncpus=128:mpiprocs=128 -l walltime=00:60:00 
+qsub -I -l select=64:node_type=rome:ncpus=128:mpiprocs=128 -l walltime=00:60:00 
+qsub -I -l select=1:node_type=rome:ncpus=64:mpiprocs=64 -l walltime=00:60:00
+
+scp asset_prices.zip hpcjfada@hawk.hww.hlrs.de:/zhome/academic/HLRS/hlrs/hpcjfada/serrano/serrano/data/Init_Data/raw_data_InBestMe 
+
+
+ws_allocate serrano_ws 31 
+
+mpirun -np 2 --map-by ppr:1:node ~/serrano/serrano/build/Seranno 1 1 10 1 16 8 
+mpirun -np 256 --map-by ppr:128:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 128 --map-by ppr:64:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+
+mpirun -np 2 --map-by ppr:1:node ./Seranno 1 1 10 1 16 8 
+mpirun -np 128 --map-by ppr:64:node ./Seranno 1 1 10 1 16 8  
+mpirun -np 256 --map-by ppr:128:node ./Seranno 3 1 10 1 16 8  
+mpirun -np 64 --map-by ppr:32:node ./Seranno 1 1 10 1 16 8  
+
+
+vulcan: qstat
+vulcan: qdel ->jobs
+vulcan: module load tools/VirtualGL/2.6.5
+vulcan: vis_via_vnc.sh 02:00:00 1910x1010
+local: vncviewer -via hpcjfada@cl5fr2.hww.hlrs.de n141401:5
+local: qsub -I -l select=1:node_type=hsw128gb24c:ncpus=24:mpiprocs=24 -l walltime=00:60:00 -X
+local: module load performance/vtune/2020.1
+ws_list : ->
+module _list
+module load tools/cmake/3.17.3
+module load compiler/gnu/11.1.0
+module load mpi/openmpi/4.1.1-gnu-11.1.0
+vtune-gui
+
+Application: Binary file of serrano
+working drector: /lustre/nec/ws2/ws/hpcjfada-serranoFramework/vtuneFilter/filter
+module load tools/VirtualGL17:00
+vis_via_vnc.sh 1910x1100 08:00:00 x0vnc
+hpcnum cl5fr2 201$ qstat -u hpcjfada
+
+
+hpcnum cl5fr2 209$ ws_list
+id: serranoFramework
+     workspace directory  : /lustre/nec/ws2/ws/hpcjfada-serranoFramework
+     remaining time       : 30 days 23 hours
+     creation time        : Wed Sep 15 17:43:31 2021
+     expiration date      : Sat Oct 16 17:43:31 2021
+     filesystem name      : NEC_lustre
+     available extensions : 3
+hpcnum cl5fr2 210$ 
+hpcnum cl5fr2 210$ cd  /lustre/nec/ws2/ws/hpcjfada-serranoFramework
+hpcnum cl5fr2 211$ pwd
+/lustre/nec/ws2/ws/hpcjfada-serranoFramework
+hpcnum cl5fr2 212$ ls
+hpcnum cl5fr2 213$ 
+
+
+
+directory with 16 Files, files have the same size
+1) How many mpi processes in one communicaotor are optimal?
+1 MPI proc
+2 mpi procs
+4 mpi procs
+.. 8 mpi procs
+1+2+4+8
+ws_allocate somename 31
+ws_list17:44
+ws_extend somename 31۵۰
+
+
+     //command line execuation for the two nodes on the HAWK
+mpirun -np 1 --map-by ppr:1:node ~/serrano/serrano/build/Seranno 1 1 10 1 16 8 
+mpirun -np 1 --map-by ppr:1:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 2 --map-by ppr:1:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 4 --map-by ppr:2:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 8 --map-by ppr:4:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 16 --map-by ppr:8:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 24 --map-by ppr:12:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 32 --map-by ppr:16:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 48 --map-by ppr:24:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 64 --map-by ppr:32:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 88 --map-by ppr:44:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 128 --map-by ppr:64:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 256 --map-by ppr:128:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+
+
+
+
+
+
+
+mpirun -np 1  ~/serrano/serrano/build/Seranno 1 1 10 1 16 8 
+mpirun -np 1  ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 2  ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 4  ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 8  ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 16  ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 24 ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 32 ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 48 ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 64 ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 88 ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 128 ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 256 ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+
+
+
+     //command line execuation for the Four nodes on the HAWK
+mpirun -np 1 --map-by ppr:1:node ~/serrano/serrano/build/Seranno 1 1 10 1 16 8 
+mpirun -np 1 --map-by ppr:1:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 4 --map-by ppr:1:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 8 --map-by ppr:2:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 16 --map-by ppr:4:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 32 --map-by ppr:8:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 64 --map-by ppr:16:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 128 --map-by ppr:32:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 256 --map-by ppr:64:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+mpirun -np 512 --map-by ppr:128:node ~/serrano/serrano/build/Seranno 3 1 10 1 16 8 
+
+
+lfs setstripe  /lustre/hpe/ws10/ws10.0/ws/hpcjfada-serrano_ws/test/InputData_strip_1MG_count_16/ --stripe-size 1m --stripe-count 16
+lfs setstripe  /lustre/hpe/ws10/ws10.0/ws/hpcjfada-serrano_ws/test/InputData_strip_4MG_count_24/ --stripe-size 4m --stripe-count 24
+
+scorep
+https://hpc-wiki.info/hpc/Score-P
+https://hpc-wiki.zih.tu-dresden.de/software/vampir/
+https://kb.hlrs.de/platforms/index.php/Vampir
+https://kb.hlrs.de/platforms/index.php/Score-P
+https://kb.hlrs.de/platforms/index.php/Scalasca
+
+
+
+Perf_Filter = #FLOPS/Time
+Bw_readin g=#Bytes/Time
+Bw_write=#Bytes/Time
+Perf_Fiilter=#FLOPS/Time_r_filter_w
+Time_r_f_w = Time_f+Time_r+Time_w
+
+
+[s]
+Read Bandwidth [B/s]
+Read Bandwidth [B/s] = data to read [B] / Time [s]
+
+ssh fe 
+ssh be 
+qsub test.sh
+javad@javad-LIFEBOOK-U749:~/Desktop/ExessClusterTools/data$ scp be:/nfs_home/hpcjfada/SERRANO/serrano/profile/1371.tar.g
+tar -cvzf my.tar.gz directory_name
+tar -xvzf myzipped.tar.gz
+
+STEP
+scp be:/nfs_home/power/pwm/node01/node01_1371.tar.gz ./
+
+1.We check the verbosity level 2
+2. project directory is work-space at the top directory
+3. AC/DC should be brought from the be scp be:nfs_home/...scp be:/nfs_home/power/pwm/node01/node01_1466.tar.gz ./
+4. then make dir 1466 and put the systime and AC DC to it and unzip it. 
+5. the put Application phases one of the time measurmt that we have in Systime (Profile_SysTime_rank_0.dat)
+6. press the Get phases
+7. select Data_source to filteredd data Filter window data to 15  15 
+
+//Kernel to be accelerated
+DBSCAN 
+https://en.wikipedia.org/wiki/DBSCAN
+_____________________________________________
+Dynamic Time Warping (DTW) 
+https://en.wikipedia.org/wiki/Dynamic_time_warping
+https://www.youtube.com/watch?v=9GdbMc4CEhE
+_____________________________________________
+Black Scholes 
+savitzky golay 

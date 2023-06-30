@@ -1,0 +1,37 @@
+
+// export PATH="/home/javad/opt/openmpi/bin":$PATH
+
+
+                            //Min Max Kernel 
+
+https://www.oreilly.com/library/view/regression-analysis-with/9781788627306/6bb0d820-6200-4bfe-aa91-e7b7ffa2a9c1.xhtml
+
+                            //Kalman Filter:
+                            
+ https://www.intechopen.com/books/introduction-and-implementations-of-the-kalman-filter/introduction-to-kalman-filter-and-its-applications
+
+
+            
+            
+            // Flops (Floating points operation per second)
+            
+  https://cs.stackexchange.com/questions/9144/calculating-floating-point-operations-per-secondflops-and-integer-operations-p          
+               
+ https://stackoverflow.com/questions/9344325/how-to-measure-flops              
+ 
+ 
+ 
+                 //regression adn curve fitting
+https://gist.github.com/SushantGautam/0f9b3f6e19839981ca60f797a882cc1a
+
+                 
+                 //KNN algorithem
+https://www.geeksforgeeks.org/k-nearest-neighbours/
+
+                 //K mean algorithm
+https://reasonabledeviations.com/2019/10/02/k-means-in-cpp/
+
+
+               //FFT Filter Description
+https://www.gaussianwaves.com/2015/11/interpreting-fft-results-obtaining-magnitude-and-phase-information/
+
