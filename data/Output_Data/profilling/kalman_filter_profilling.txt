@@ -1,0 +1,12 @@
+                       Profilling of the parallel Kernel Kalman Filter 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+num proc     perforation stride     absoulute error         relative error          execuation Time/s     energy/Joule
+   1                   1        2.68347e+126               2.68347e+126              0.0200458             3.37393
+
+
+                            Profilling the components of parallel Kalman Filter 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ipart            num proc              part name          execuation Time/s     energy/Joule
+0                   1                   R                 0.00611281             1.02886
+1                   1                   K                  0.0111299             1.87328
+2                   1                   W                 0.00280309            0.471791
