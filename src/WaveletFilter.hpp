@@ -6,8 +6,7 @@
 #include <complex>
 #include <cmath>
 #include "signalContainer.hpp"
-#include <vector.h>
-#include <wavelet.h>
+
 
 template<typename I,typename O>
 class Wavelet_Filter {
