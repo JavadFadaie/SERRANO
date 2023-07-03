@@ -346,7 +346,7 @@ IDEKO_DATA<I>::convertBackToCSVFormate(){
     for(int i(0); i <outputSignalContainerVec.size(); i++){
        std::vector<I> const & outputSignal (outputSignalContainerVec[i].signalVal);
        cluster_output << outputSignal[index] <<";" ; 
-       std::cout << outputSignal[index] << std::endl;
+       //std::cout << outputSignal[index] << std::endl;
     }
     cluster_output << std::endl;
   }
