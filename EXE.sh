@@ -1,6 +1,6 @@
 #!/bin/bash
 
-t
+
      #Choosing the Kernel
 icase=0
 
