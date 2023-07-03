@@ -51,24 +51,18 @@ num_core_numa=16
 workspace="/home/javad/Desktop/projekt/SERRANO/data"
 profillgWorkSpace="/home/javad/projekt/interview/SERRANO/profile"
 
- #Setting up the workspace for Hawk compute node
+   #Setting up the workspace for Hawk compute node
 #workspace="/zhome/academic/HLRS/hlrs/hpcjfada/serrano/serrano/data"
 #profillgWorkSpace="/zhome/academic/HLRS/hlrs/hpcjfada/serrano/serrano/profile"
 
 
 
      #Path for input and output data
-#readInputData="/Init_Data/sample/sample.csv";
-#readInputData="/Init_Data/sample/sampleAccel.csv";
-#readInputData="/Init_Data/sample/preprocessed_dataset.csv";
-#readInputData="/Init_Data/raw_data_InBestMe/10_asset_prices.csv";
-#readInputData="/Init_Data//inference_data_position/1674644652755.csv";
-#readInputData="/Init_Data/raw_data_position/position_110.csv";
 readInputData="/Init_Data/acceleration/raw_data/acceleration_cycle_26.csv";
 #readInputData="/Init_Data/raw_data_acceleration_KMean/postprocessed_ffts_26.csv";
+#readInputData="/Init_Data/raw_data_position/position_110.csv";
 inputDataDouble="/Input_Data/Double_Data_Type/signalFilter"
 inputDataFloat="/Input_Data/Float_Data_Type/signalFilter"
-#inferenceKNNPath="/Init_Data/inference_data_position/Acceleration/"
 inferenceKNNPath="/Init_Data/inference_data_position/"
 outputDataCSV="data/outputData/FFTFilter/FFT.csv"
 
