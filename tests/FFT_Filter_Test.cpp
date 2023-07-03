@@ -79,8 +79,8 @@ std::vector<double> const  readTheCSVformate(std::string const inputDataPath){
 TEST(FFT_FilterTest, Test26Signals )
 { 
     
-   std::string IDEKO_FFT_Path = "/home/javad/Desktop/interview/SERRANO/data/Init_Data/acceleration/ffts_output/ffts_26.csv";  
-   std::string HPC_FFT_Path = "/home/javad/Desktop/interview/SERRANO/data/Output_Data/CSVFormate/FFT_Filter_output.csv";
+   std::string IDEKO_FFT_Path = "/home/javad/Desktop/projekt/SERRANO/data/Init_Data/acceleration/ffts_output/ffts_26.csv";  
+   std::string HPC_FFT_Path = "/home/javad/Desktop/projekt/SERRANO/data/Output_Data/CSVFormate/FFT_Filter_output.csv";
    std::vector<double> IDEKO_FFT_output( readTheCSVformate(IDEKO_FFT_Path) );
    std::vector<double> HPC_FFT_output( readTheCSVformate(HPC_FFT_Path) );
    
