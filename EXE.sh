@@ -1,23 +1,23 @@
 #!/bin/bash
 
-
+t
      #Choosing the Kernel
 icase=0
 
       #Choosing the Kernel Type
-IDEKO_Kernel=0
-INBestMe_Kernel=1
+IDEKO_Kernel=1
+INBestMe_Kernel=0
 
     #Packing the into CSV format
-packing2CSVformat=1
+packing2CSVformat=0
 
      #Benchmark Status
 BenchmarkState=0
 
    #Applying Filter (1: Filter apply, 0: Filter does not apply)
 Kalman_Filter=0    
-FFT_Filter=0
-BlackScholes=1
+FFT_Filter=1
+BlackScholes=0
 SavitzkyGoly_Transform=0
 Wavelet_Filter=0
 
@@ -41,15 +41,15 @@ num_Thread=1
 perforation_stride=1
 
       #Transprecision Techniques
-precision_senario=2
+precision_senario=1
 
     #Hardware Configurationvim 
 num_numa=8
 num_core_numa=16
 
     #Setting up the workspace
-workspace="/home/javad/Desktop/Serrano/serrano/data"
-profillgWorkSpace="/home/javad/Desktop/Serrano/serrano/profile"
+workspace="/home/javad/Desktop/projekt/SERRANO/data"
+profillgWorkSpace="/home/javad/projekt/interview/SERRANO/profile"
 
  #Setting up the workspace for Hawk compute node
 #workspace="/zhome/academic/HLRS/hlrs/hpcjfada/serrano/serrano/data"
@@ -61,10 +61,10 @@ profillgWorkSpace="/home/javad/Desktop/Serrano/serrano/profile"
 #readInputData="/Init_Data/sample/sample.csv";
 #readInputData="/Init_Data/sample/sampleAccel.csv";
 #readInputData="/Init_Data/sample/preprocessed_dataset.csv";
-readInputData="/Init_Data/raw_data_InBestMe/10_asset_prices.csv";
+#readInputData="/Init_Data/raw_data_InBestMe/10_asset_prices.csv";
 #readInputData="/Init_Data//inference_data_position/1674644652755.csv";
 #readInputData="/Init_Data/raw_data_position/position_110.csv";
-#readInputData="/Init_Data/raw_data_input_fft/acceleration_cycle_26.csv";
+readInputData="/Init_Data/acceleration/raw_data/acceleration_cycle_26.csv";
 #readInputData="/Init_Data/raw_data_acceleration_KMean/postprocessed_ffts_26.csv";
 inputDataDouble="/Input_Data/Double_Data_Type/signalFilter"
 inputDataFloat="/Input_Data/Float_Data_Type/signalFilter"
@@ -77,3 +77,4 @@ EXE=build/SERRANO
 
 
 mpirun --oversubscribe -np $num_MPI_Procs $EXE $icase $BenchmarkState $Kalman_Filter $FFT_Filter $BlackScholes $SavitzkyGoly_Transform $R $K_nearest_neighbor $Cluster_number_KNN $number_cluster_kmean $epsilon_criteria $perforation_stride $precision_senario $num_numa $num_core_numa $num_Thread $workspace $profillgWorkSpace $readInputData $inputDataDouble $inputDataFloat $inferenceKNNPath $IDEKO_Kernel $INBestMe_Kernel $packing2CSVformat $Wavelet_Filter
+
