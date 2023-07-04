@@ -2,14 +2,14 @@
 
 
      #Choosing the Kernel
-icase=0
+icase=1
 
       #Choosing the Kernel Type
 IDEKO_Kernel=1
 INBestMe_Kernel=0
 
     #Packing the into CSV format
-packing2CSVformat=0
+packing2CSVformat=1
 
      #Benchmark Status
 BenchmarkState=0
@@ -49,7 +49,7 @@ num_core_numa=16
 
     #Setting up the workspace
 workspace="/home/javad/Desktop/projekt/SERRANO/data"
-profillgWorkSpace="/home/javad/projekt/interview/SERRANO/profile"
+profillgWorkSpace="/home/javad/Desktop/projekt/SERRANO/profile"
 
    #Setting up the workspace for Hawk compute node
 #workspace="/zhome/academic/HLRS/hlrs/hpcjfada/serrano/serrano/data"
