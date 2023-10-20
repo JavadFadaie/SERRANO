@@ -21,7 +21,7 @@ include_directories(${MPI_INCLUDE_PATH})
 add_executable(${PROJECT_NAME} main.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC src)
 
-target_link_libraries(${PROJECT_NAME} $d{MPI_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${MPI_LIBRARIES})
 target_link_libraries(${PROJECT_NAME}  -lfftw3_mpi -lfftw3_omp fftw3)
 
 
