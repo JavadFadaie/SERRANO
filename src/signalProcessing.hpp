@@ -279,9 +279,9 @@ template<typename I,typename O>
 void
 SignalProcessing<I,O>::setFilterSignalPath()
 {
-   kalman_filter_path = data_workspace + kalman_filter_path;    
-   fft_filter_path = data_workspace + fft_filter_path;  
-   blackScholes_path = data_workspace + blackScholes_path;
+   kalman_filter_path  = data_workspace + kalman_filter_path;    
+   fft_filter_path     = data_workspace + fft_filter_path;  
+   blackScholes_path   = data_workspace + blackScholes_path;
    savitzkey_glay_path = data_workspace + savitzkey_glay_path;  
 }
 
@@ -550,6 +550,11 @@ SignalProcessing<I,O>::writeVecSignal(){
    for(int i(0); i<outputSignalContainerVec.size(); i++){
      int signalIndex = outputSignalContainerVec[i].signalId;
      std::vector<O> const & outputSignal (outputSignalContainerVec[i].signalVal);
+   /*
+     std::cout << "this is the size " << outputSignal.size() << std::endl; 
+     for(int i(0); i < outputSignal.size(); i++){
+      std::cout << i << " | " << outputSignal[i] << std::endl;
+     }*/
      std::string freqsignal = outputpath + "/signal_filter_"+ std::to_string(signalIndex); 
      if(write2BinFile){
        tool.writeBuffer2Binary( outputSignal , freqsignal);

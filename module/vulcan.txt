@@ -1,5 +1,6 @@
  qsub -I -l select=1:node_type=hsw128gb24c:ncpus=24:mpiprocs=24 -l walltime=00:60:00
- 
+code.hlrs.de : hpcfada
+password : Jr15902358134sms! 
 ssh hpcjfada@hawk.hww.hlrs.de -X 
 ssh hpcjfada@hawk.hww.hlrs.de
 ssh hpcjfada@vulcan.hww.hlrs.de 
@@ -162,6 +163,9 @@ tar -xvzf myzipped.tar.gz
 STEP
 scp be:/nfs_home/power/pwm/node01/node01_1371.tar.gz ./
 
+
+
+
 1.We check the verbosity level 2
 2. project directory is work-space at the top directory
 3. AC/DC should be brought from the be scp be:nfs_home/...scp be:/nfs_home/power/pwm/node01/node01_1466.tar.gz ./
@@ -180,3 +184,8 @@ https://www.youtube.com/watch?v=9GdbMc4CEhE
 _____________________________________________
 Black Scholes 
 savitzky golay 
+
+
+
+scp -r ~/Desktop/Serrano_code_hlrs/SERRANO be:~/serrano_local_3
+

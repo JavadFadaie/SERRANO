@@ -33,7 +33,7 @@ CMakeFiles/SERRANO.dir/main.cpp.o
  ../src/signal_Distributor.hpp
  ../src/vector.h
  ../src/wavelet.h
- /home/javad/Desktop/Serrano/serrano/main.cpp
+ /home/javad/Desktop/Serrano_code_hlrs/serrano/SERRANO/main.cpp
  /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h
  /usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h
  /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/comm.h

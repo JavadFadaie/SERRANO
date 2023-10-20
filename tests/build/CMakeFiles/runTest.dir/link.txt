@@ -1,1 +1,1 @@
-/usr/bin/c++   -fopenmp    -Wl,-rpath -Wl,/home/javad/opt/openmpi/lib -Wl,--enable-new-dtags -pthread CMakeFiles/runTest.dir/KalmanFilterTest.cpp.o  -o runTest  -Wl,-rpath,/home/javad/opt/openmpi/lib /home/javad/opt/openmpi/lib/libmpi.so /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 
+/usr/bin/c++   -fopenmp    -pthread CMakeFiles/runTest.dir/KalmanFilterTest.cpp.o  -o runTest  -Wl,-rpath,/usr/lib/x86_64-linux-gnu/openmpi/lib /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi_cxx.so /usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 

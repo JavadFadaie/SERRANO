@@ -1,4 +1,4 @@
-# Install script for directory: /home/javad/Desktop/Serrano/serrano
+# Install script for directory: /home/javad/Desktop/Serrano_code_hlrs/serrano/SERRANO
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/javad/Desktop/Serrano/serrano/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/javad/Desktop/Serrano_code_hlrs/serrano/SERRANO/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

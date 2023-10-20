@@ -1,0 +1,12 @@
+                       Profilling of the parallel Kernel KMean Classification 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+num proc     Quality Control loop   execuation Time/s     energy/Joule
+   4                 0.0001             699.567              118853
+
+
+                       Profilling the components of parallel KMean Classification 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ipart            num proc     Quality Control loop          part name          execuation Time/s     energy/Joule
+0                   4                 0.0001                 RKMEAN                 0.00246286             0.41843
+1                   4                 0.0001                  KMEAN                    699.564              118853
+2                   4                 0.0001                 WKMEAN                0.000950575            0.161499

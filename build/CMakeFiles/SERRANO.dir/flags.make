@@ -6,5 +6,5 @@ CXX_FLAGS =  -fopenmp   -pthread -std=c++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/home/javad/Desktop/Serrano/serrano/src 
+CXX_INCLUDES = -I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -I/usr/lib/x86_64-linux-gnu/openmpi/include -I/home/javad/Desktop/Serrano_code_hlrs/serrano/SERRANO/src 
 

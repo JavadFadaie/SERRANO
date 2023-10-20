@@ -48,6 +48,8 @@ class KNN_Signal{
     void getTrainingSignal( std::string _classification_training);
    
     void setFilterSignalPath();
+
+    void cluster_label_path( std::string const & _clustring_label);
     
     void signalDistribution();
 
@@ -108,7 +110,7 @@ class KNN_Signal{
     std::string inputDataPath;
     std::string KNNDataPath;
     std::string unclassified_path_signal;
-    std::string classification_training;
+    std::string clustring_label;
     std::string index2SensorNameTransform;
    
     std::string data_workspace;
@@ -148,7 +150,7 @@ KNN_Signal<I,O>::KNN_Signal(int _rank, int _size)
 ,size(_size)
 ,buffer_size(0)
 ,k(3)
-,classification_training("/Output_Data/KMean/KMean_cluster.csv")
+//,clustring_label("/Output_Data/KMean/KMean_cluster.csv")
 ,KNNDataPath("/Output_Data/KNN/")
 ,numUnclassifiedSignal(0)
 {
@@ -191,13 +193,19 @@ KNN_Signal<I,O>::Profile_WorkSpace( std::string const & _profile_workspace){
   profile_workspace = _profile_workspace;
 }
 
+template<typename I,typename O>
+void
+KNN_Signal<I,O>::cluster_label_path( std::string const & _clustring_label){
+  clustring_label = _clustring_label;
+}
+
 
 template<typename I,typename O>
 void
 KNN_Signal<I,O>::setFilterSignalPath(){
 
    KNNDataPath = data_workspace + KNNDataPath; 
-   classification_training = data_workspace + classification_training;
+   clustring_label = data_workspace + clustring_label;
    index2SensorNameTransform =  data_workspace +"/Output_Data/Scalability/signalTransform.txt"; 
  
 
@@ -242,7 +250,7 @@ KNN_Signal<I,O>::loadingSignals(){
 
   setFilterSignalPath();
   
-  std::vector<KMeanClassificationContanier> KMeanClassificationVec(tool.signalClassificationReader(classification_training));
+  std::vector<KMeanClassificationContanier> KMeanClassificationVec(tool.signalClassificationReader(clustring_label));
   std::vector<Index2SensorName> Index2sensorId(tool.readTransfIndex(index2SensorNameTransform));
      
      

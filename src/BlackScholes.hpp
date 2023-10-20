@@ -272,7 +272,7 @@ BlackScholes<I,O>::blackscholes_apply(std::vector<I> const & prices, int const s
                        , risk_free_return
                        , sigma);
 
-   writeOutputTxtFile();
+   //writeOutputTxtFile();
 }
 
 

@@ -1,0 +1,12 @@
+                       Profilling of the parallel Kernel Savitzkey Golay 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+num proc     perforation stride     absoulute error         relative error          execuation Time/s     energy/Joule
+   1                   1             13.6837                    13.6837             0.00170469            0.286919
+
+
+                            Profilling the components of parallel Savitzkey Golay 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ipart            num proc              part name          execuation Time/s     energy/Joule
+0                   1                   R                0.000724316             0.12191
+1                   1                   K                0.000597715            0.100602
+2                   1                   W                0.000382662           0.0644063

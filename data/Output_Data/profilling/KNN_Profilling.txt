@@ -1,0 +1,12 @@
+                       Profilling of the parallel Kernel KNN Classification 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+num proc        execuation Time/s     energy/Joule
+   1              0.0208066             3.50198
+
+
+                       Profilling the components of parallel KNN Classification 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ipart            num proc              part name          execuation Time/s     energy/Joule
+0                   1                RKNN                0.000178814           0.0300964
+1                   1                 KNN                  0.0205464              3.4582
+2                   1                WKNN                8.13007e-05           0.0136838

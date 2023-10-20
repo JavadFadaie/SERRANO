@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/javad/Desktop/Serrano/serrano/main.cpp" "/home/javad/Desktop/Serrano/serrano/build/CMakeFiles/SERRANO.dir/main.cpp.o"
+  "/home/javad/Desktop/Serrano_code_hlrs/serrano/SERRANO/main.cpp" "/home/javad/Desktop/Serrano_code_hlrs/serrano/SERRANO/build/CMakeFiles/SERRANO.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

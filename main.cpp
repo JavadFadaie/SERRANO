@@ -81,13 +81,8 @@ int main(int argc, char* argv[])
      int INBestMe_Kernel    = atoi(argv[24]);
 
      int packing2CSVformate = atoi(argv[25]);
-    
-     if(packing2CSVformate){
-         std::cout << "The output CSV file is generated for use case providers " << std::endl;
-         IDEKO_Kernel = 0;
-         INBestMe_Kernel = 0;
-         icase = 0;
-     }
+     std::string clustring_label = argv[27];
+     
      
      readDataPath          = data_workspace + readDataPath;
      inputDataDouble       = data_workspace + inputDataDouble;
@@ -132,7 +127,7 @@ int main(int argc, char* argv[])
    int num_cores = num_numa*num_core_numa;
    int rank_dist = num_cores/new_size;
    
-         
+    
     switch(icase){
        case 0:{
             
@@ -149,27 +144,12 @@ int main(int argc, char* argv[])
              data.useCaseKernelApply(IDEKO_Kernel, INBestMe_Kernel);
            } 
 
-           if(packing2CSVformate){
-            
-            if(rank == 0){  
-             IDEKO_DATA<double> data(rank,size);
-             data.Data_WorkSpace(data_workspace);
-             data.Data_IO_Path( readDataPath);
-             data.applyingFilters( Kalman_Filter
-                                 , FFT_Filter
-                                 , BlackScholes
-                                 , SavitzkyGoly_Transform );
-             data.convertBackToCSVFormate(); 
-            }
-           }
-      
           break;
         }
        case 1: {
            switch (dataPrecisionCase)
            {
              case 1:{
-                  // std::cout << "double " << "double" << std::endl;
                    SignalProcessing<double,double> signal_process(rank,size);
                    signal_process.Data_WorkSpace(data_workspace);
                    signal_process.Profile_WorkSpace(profile_workspace);     
@@ -308,6 +288,7 @@ int main(int argc, char* argv[])
                   KNN_Signal<double,double> knn(rank,size);
                   knn.Data_IO_Path(inputDataDouble);
                   knn.Profile_WorkSpace(profile_workspace);
+                  knn.cluster_label_path(clustring_label);
        	          knn.Data_WorkSpace(data_workspace);
                   knn.getPathUnclassifiedSignal(inferenceKNNPath);   
                   knn.clusterNum(numCluster_KNN);
@@ -321,6 +302,7 @@ int main(int argc, char* argv[])
                   KNN_Signal<double,float> knn(rank,size);
                   knn.Data_IO_Path(inputDataDouble );
                   knn.Profile_WorkSpace(profile_workspace);
+       	          knn.cluster_label_path(clustring_label);
        	          knn.Data_WorkSpace(data_workspace);
                   knn.getPathUnclassifiedSignal(inferenceKNNPath);   
                   knn.clusterNum(numCluster_KNN);
@@ -334,6 +316,7 @@ int main(int argc, char* argv[])
                   KNN_Signal<float,double> knn(rank,size);
                   knn.Data_IO_Path(inputDataFloat);
                   knn.Profile_WorkSpace(profile_workspace);
+       	          knn.cluster_label_path(clustring_label);
        	          knn.Data_WorkSpace(data_workspace);
                   knn.getPathUnclassifiedSignal(inferenceKNNPath);   
                   knn.clusterNum(numCluster_KNN);
@@ -347,6 +330,7 @@ int main(int argc, char* argv[])
                   KNN_Signal<float,float> knn(rank,size);
                   knn.Data_IO_Path(inputDataFloat );
                   knn.Profile_WorkSpace(profile_workspace);
+       	          knn.cluster_label_path(clustring_label);
        	          knn.Data_WorkSpace(data_workspace);
                   knn.getPathUnclassifiedSignal(inferenceKNNPath);   
                   knn.clusterNum(numCluster_KNN);
@@ -495,6 +479,22 @@ int main(int argc, char* argv[])
           
           break;
         }
+       
+      case -2 : {
+            
+            if(rank == 0){  
+             IDEKO_DATA<double> data(rank,size);
+             data.Data_WorkSpace(data_workspace);
+             data.Data_IO_Path( readDataPath);
+             data.applyingFilters( Kalman_Filter
+                                 , FFT_Filter
+                                 , BlackScholes
+                                 , SavitzkyGoly_Transform );
+             data.convertBackToCSVFormate(); 
+            }
+           
+           break;   
+           }
        
    }
   
