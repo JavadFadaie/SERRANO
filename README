@@ -1,0 +1,102 @@
+Serrano Software
+Overview
+
+The Serrano Software is a command-line utility that allows you to perform signal processing and filtering on data using various kernels and transprecision techniques. It is designed to run on a parallelized environment and provides options for optimizing data processing.
+Table of Contents
+
+    Installation
+    Usage
+    Configuration
+    Examples
+    Contributing
+    License
+
+Installation
+
+The Serrano Software does not require a traditional installation process. You can run it directly from the source code by following these steps:
+
+    Clone the Serrano repository from the GitHub repository (provide link if available).
+
+    Ensure you have the necessary dependencies installed. These dependencies may include Python, MPI (Message Passing Interface), and other libraries. Please refer to the project documentation for detailed requirements.
+
+    Navigate to the root directory of the Serrano Software.
+
+    Execute the software by running the main script.
+
+bash
+
+python serrano.py
+
+Usage
+
+To use the Serrano Software, follow the prompts to enter specific parameters:
+
+    Use Case Providers: Choose between "ideko" and "inbestme" as the use case provider.
+
+    Kernel Name: Select the desired kernel for signal processing, such as "kalman filter," "fft filter," "black scholes," "k-means," "sav gol," or "wavelet."
+
+    Number of Signals: Enter the number of signals you want to process.
+
+    Number of Processes: Specify the number of processes to be used for parallelization.
+
+    Precision: Define the precision level for transprecision techniques.
+
+Once you have provided the necessary input, the software will execute the signal processing according to the selected options.
+Configuration
+
+The Serrano Software provides several configuration options within the script:
+
+    Parallelization Parameters: You can configure the number of MPI processes for parallel execution.
+
+    Transprecision Techniques: Adjust the precision scenario according to your requirements.
+
+    Kernel Type: Choose between kernels relevant to your use case.
+
+    Workspace and Data Paths: Configure the input and output data paths, workspace, and profiling workspace to match your system setup.
+
+    Additional Parameters: Fine-tune various parameters based on your use case, such as filter settings and hardware configuration.
+
+Examples
+
+Here are some examples of using the Serrano Software:
+Example 1: Running the Software
+
+bash
+
+python serrano.py
+Enter the use case providers: ideko
+Enter the kernel name: kalman filter
+Enter the number of signals: 100
+Enter the number of processes: 4
+Enter the precision: high
+
+Example 2: Running a Different Kernel
+
+bash
+
+python serrano.py
+Enter the use case providers: inbestme
+Enter the kernel name: fft filter
+Enter the number of signals: 50
+Enter the number of processes: 8
+Enter the precision: low
+
+Contributing
+
+If you'd like to contribute to the Serrano Software project, please follow these steps:
+
+    Fork the repository on GitHub.
+
+    Create a new branch with a descriptive name for your feature or bug fix.
+
+    Make your changes and ensure that your code adheres to the project's coding standards.
+
+    Write tests for your code if applicable.
+
+    Submit a pull request to the main repository.
+
+License
+
+The Serrano Software is released under the [insert license name] license. See the LICENSE file for details.
+
+For any questions, issues, or further information, please refer to the [project repository](insert GitHub link) and [documentation](insert documentation link).
