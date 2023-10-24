@@ -15,7 +15,7 @@ Installation
 
     Clone the Serrano repository from the GitHub repository (https://github.com/JavadFadaie/SERRANO/tree/main).
 
-    Ensure you have the necessary dependencies installed. These dependencies may include Python, MPI (Message Passing Interface), and other libraries.
+    Ensure you have the necessary dependencies installed. These dependencies may include Cmake, C++17, Python, MPI (Message Passing Interface), and other libraries.
 
     Navigate to the root directory of the Serrano Software. execute this command to generate SERRNAO binary
 
