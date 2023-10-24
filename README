@@ -1,4 +1,4 @@
-Serrano Software
+Serrano HPC-Service
 Overview
 
 The Serrano Software is a command-line utility that allows you to perform signal processing and filtering on data using various kernels and transprecision techniques. It is designed to run on a parallelized environment and provides options for optimizing data processing.
@@ -8,24 +8,25 @@ Table of Contents
     Usage
     Configuration
     Examples
-    Contributing
-    License
-
+   
 Installation
 
-The Serrano Software does not require a traditional installation process. You can run it directly from the source code by following these steps:
+    The Serrano Software does not require a traditional installation process. You can run it directly from the source code by following these steps:
 
-    Clone the Serrano repository from the GitHub repository (provide link if available).
+    Clone the Serrano repository from the GitHub repository (https://github.com/JavadFadaie/SERRANO/tree/main).
 
-    Ensure you have the necessary dependencies installed. These dependencies may include Python, MPI (Message Passing Interface), and other libraries. Please refer to the project documentation for detailed requirements.
+    Ensure you have the necessary dependencies installed. These dependencies may include Python, MPI (Message Passing Interface), and other libraries.
 
-    Navigate to the root directory of the Serrano Software.
+    Navigate to the root directory of the Serrano Software. execute this command to generate SERRNAO binary
 
-    Execute the software by running the main script.
+    1. source module/modHawk.sh
+    2. cd build
+    3. cmake ..
+    4. make 
 
 bash
 
-python serrano.py
+python3 HPC_Service.py
 
 Usage
 
@@ -33,9 +34,9 @@ To use the Serrano Software, follow the prompts to enter specific parameters:
 
     Use Case Providers: Choose between "ideko" and "inbestme" as the use case provider.
 
-    Kernel Name: Select the desired kernel for signal processing, such as "kalman filter," "fft filter," "black scholes," "k-means," "sav gol," or "wavelet."
+    Kernel Name: Select the desired kernel for signal processing, such as (inbestme : "kalman filter," "sav gol," "black scholes,") (ideko: "k-means,""fft filter," or "knn")
 
-    Number of Signals: Enter the number of signals you want to process.
+    Number of Signals: Enter the number of signals you want to process.(inbestme 10 , 100 ) (ideko :110,330,550,770,990,1100 )
 
     Number of Processes: Specify the number of processes to be used for parallelization.
 
@@ -43,6 +44,11 @@ To use the Serrano Software, follow the prompts to enter specific parameters:
 
 Once you have provided the necessary input, the software will execute the signal processing according to the selected options.
 Configuration
+
+   The output of the processed signal can be found in the following folders:
+
+    For "kalman filter," "sav gol," "black scholes," and "fft filter," check the data/Output_Data/CSVFormat directory.
+    For "KMean" and "KNN," check the data/Output_Data/ directory.
 
 The Serrano Software provides several configuration options within the script:
 
@@ -54,8 +60,7 @@ The Serrano Software provides several configuration options within the script:
 
     Workspace and Data Paths: Configure the input and output data paths, workspace, and profiling workspace to match your system setup.
 
-    Additional Parameters: Fine-tune various parameters based on your use case, such as filter settings and hardware configuration.
-
+   
 Examples
 
 Here are some examples of using the Serrano Software:
@@ -63,40 +68,22 @@ Example 1: Running the Software
 
 bash
 
-python serrano.py
+python3 HPC_Service.py
 Enter the use case providers: ideko
-Enter the kernel name: kalman filter
-Enter the number of signals: 100
+Enter the kernel name: knn
+Enter the number of signals: 110
 Enter the number of processes: 4
-Enter the precision: high
+Enter the precision: 1
 
 Example 2: Running a Different Kernel
 
 bash
 
-python serrano.py
+python HPC_Service.py
 Enter the use case providers: inbestme
-Enter the kernel name: fft filter
-Enter the number of signals: 50
+Enter the kernel name: kalman filter
+Enter the number of signals: 10
 Enter the number of processes: 8
-Enter the precision: low
+Enter the precision: 2
 
-Contributing
 
-If you'd like to contribute to the Serrano Software project, please follow these steps:
-
-    Fork the repository on GitHub.
-
-    Create a new branch with a descriptive name for your feature or bug fix.
-
-    Make your changes and ensure that your code adheres to the project's coding standards.
-
-    Write tests for your code if applicable.
-
-    Submit a pull request to the main repository.
-
-License
-
-The Serrano Software is released under the [insert license name] license. See the LICENSE file for details.
-
-For any questions, issues, or further information, please refer to the [project repository](insert GitHub link) and [documentation](insert documentation link).
