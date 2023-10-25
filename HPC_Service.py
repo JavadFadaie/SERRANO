@@ -150,6 +150,7 @@ def execute_serrano_script(use_case_providers, kernel_name, num_signals, num_pro
         subprocess.run(command, check=True)
 
 if __name__ == "__main__":
+    print("Please verify the 'workspace' and 'profillgWorkSpace' paths (line 99, 100) and adjust them accordingly. ")
     use_case_providers = input("Enter the use case providers:  ")
     kernel_name = input("Enter the kernel name: ")
     num_signals = input("Enter the number of signals:  ")
