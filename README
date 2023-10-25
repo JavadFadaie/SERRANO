@@ -36,9 +36,13 @@ To use the Serrano Software, follow the prompts to enter specific parameters:
 
     Use Case Providers: Choose between "ideko" and "inbestme" as the use case provider.
 
-    Kernel Name: Select the desired kernel for signal processing, such as (inbestme : "kalman filter," "sav gol," "black scholes,") (ideko: "k-means,""fft filter," or "knn")
+    Kernel Name: Select the desired kernel for signal processing, such as : 
+                 inbestme : "kalman filter," "sav gol," "black scholes" 
+                 ideko: "k-means,""fft filter," or "knn"
 
-    Number of Signals: Enter the number of signals you want to process.(inbestme 10 , 100 ) (ideko :110,330,550,770,990,1100 )
+    Number of Signals: Enter the number of signals you want to process.
+                  inbestme : 10 , 100  
+                  ideko :110,330,550,770,990,1100 
 
     Number of Processes: Specify the number of processes to be used for parallelization.
 
