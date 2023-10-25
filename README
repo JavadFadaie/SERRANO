@@ -32,6 +32,8 @@ Usage
 
 To use the Serrano Software, follow the prompts to enter specific parameters:
 
+    Please check the workspace and profillgWorkSpace path (line 99, 100) and set it accordingly
+
     Use Case Providers: Choose between "ideko" and "inbestme" as the use case provider.
 
     Kernel Name: Select the desired kernel for signal processing, such as (inbestme : "kalman filter," "sav gol," "black scholes,") (ideko: "k-means,""fft filter," or "knn")
