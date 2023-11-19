@@ -129,7 +129,6 @@ void
 SavitzkyGoly<I,O>::Savitzky_Goly_apply()
 {
 
-   std::vector<I>  InputData={4, 6, 2, 8, 7, 5, 9, 3, 4, 6, 2, 8, 7, 5, 9, 3, 4, 6, 2, 8, 7, 5, 9, 3, 4, 6, 2, 8, 7, 5, 9, 3};
    
     Savitzky_Goly_function_elevel_windeow( InputData);
 

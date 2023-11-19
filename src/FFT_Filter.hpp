@@ -3,7 +3,6 @@
 
 #include<iostream>
 #include<vector>
-#include <fftw3-mpi.h>
 #include <complex>
 #include <cmath>
 #include "signalContainer.hpp"
